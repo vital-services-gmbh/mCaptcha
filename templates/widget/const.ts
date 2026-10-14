@@ -56,10 +56,15 @@ type messageTextReturn = {
   error: () => void;
 };
 
-export const BEFORE = "I'm not a robot";
-export const DURING = "Processing...";
-export const AFTER = "Verified!";
-export const ERROR = "Something went wrong";
+/** reads a localized message rendered by the server, falls back to English */
+const localized = (key: string, fallback: string): string =>
+  document.querySelector<HTMLElement>(".widget__container")?.dataset[key] ??
+  fallback;
+
+export const BEFORE = localized("msgBefore", "I'm not a robot");
+export const DURING = localized("msgDuring", "Processing...");
+export const AFTER = localized("msgAfter", "Verified!");
+export const ERROR = localized("msgError", "Something went wrong");
 
 export const messageText = (): messageTextReturn => {
   const conatinerID = "widget__verification-text";

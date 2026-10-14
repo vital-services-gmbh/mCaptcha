@@ -9,7 +9,6 @@
         "type_info": {
           "type": "Timestamp",
           "flags": "NOT_NULL | UNSIGNED | BINARY | TIMESTAMP",
-          "char_set": 63,
           "max_size": 19
         }
       }

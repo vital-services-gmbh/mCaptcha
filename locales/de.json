@@ -1,0 +1,11 @@
+{
+  "before": "Ich bin kein Roboter",
+  "during": "Wird verarbeitet...",
+  "after": "Verifiziert!",
+  "error": "Etwas ist schiefgelaufen",
+  "noscript": "Bitte aktivieren Sie JavaScript, um die mCaptcha-Abfrage zu erhalten",
+  "source_code": "Quellcode ansehen",
+  "logo_alt": "mCaptcha-Logo",
+  "privacy": "Datenschutz",
+  "terms": "Bedingungen"
+}

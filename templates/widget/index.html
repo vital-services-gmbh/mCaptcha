@@ -6,24 +6,28 @@ SPDX-License-Identifier: MIT OR Apache-2.0
 
 <. include!("../components/headers/widget-headers.html"); .>
   <body>
-    <main class="widget__container">
+    <main class="widget__container"
+      data-msg-before="<.= t.before .>"
+      data-msg-during="<.= t.during .>"
+      data-msg-after="<.= t.after .>"
+      data-msg-error="<.= t.error .>">
       <form class="widget__inner-container">
           <noscript>
             <div class="widget__noscript-container">
               <span class="widget__noscript-warning">
-                Please enable JavaScript to receive mCaptcha challenge
+                <.= t.noscript .>
               </span>
               <a class="widget__source-code" href="https://github.com/mCaptcha">
-                Read our source code
+                <.= t.source_code .>
               </a>
            </div>
         </noscript>
         <label class="widget__verification-container" for="widget__verification-checkbox">
           <span id="widget__verification-text"
-            >I'm not a robot</span>
+            ><.= t.before .></span>
           <input disabled
               id="widget__verification-checkbox"
-              aria-valuenow="I'm not a robot"
+              aria-valuenow="<.= t.before .>"
                 aria-checked="false"
                 role="checkbox"
               class="widget__verification-checkbox"
@@ -37,7 +41,7 @@ SPDX-License-Identifier: MIT OR Apache-2.0
             <img
               class="widget__mcaptcha-logo"
               src="<.= crate::FILES.get("./static/cache/img/icon-trans.png").unwrap().>"
-              alt="mCaptcha logo"
+              alt="<.= t.logo_alt .>"
             />
             <p class="widget__mcaptcha-brand-name">mCaptcha</p>
           </a>
@@ -45,12 +49,12 @@ SPDX-License-Identifier: MIT OR Apache-2.0
             <a class="widget__mcaptcha-info-link"
               target="_blank"
               href="<.= crate::PKG_HOMEPAGE .><.= crate::PAGES.privacy .>">
-              Privacy
+              <.= t.privacy .>
             </a>
             <a class="widget__mcaptcha-info-link"
               target="_blank"
               href="<.= crate::PKG_HOMEPAGE .><.= crate::PAGES.security .>">
-              Terms
+              <.= t.terms .>
             </a>
           </div>
         </div>

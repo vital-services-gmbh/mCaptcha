@@ -25,6 +25,7 @@ mod docs;
 mod easy;
 mod email;
 mod errors;
+mod locale;
 #[macro_use]
 mod pages;
 #[macro_use]
