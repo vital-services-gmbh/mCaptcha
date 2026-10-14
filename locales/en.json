@@ -1,0 +1,11 @@
+{
+  "before": "I'm not a robot",
+  "during": "Processing...",
+  "after": "Verified!",
+  "error": "Something went wrong",
+  "noscript": "Please enable JavaScript to receive mCaptcha challenge",
+  "source_code": "Read our source code",
+  "logo_alt": "mCaptcha logo",
+  "privacy": "Privacy",
+  "terms": "Terms"
+}

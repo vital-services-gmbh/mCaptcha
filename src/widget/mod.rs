@@ -9,6 +9,7 @@ use lazy_static::lazy_static;
 use sailfish::TemplateOnce;
 
 use crate::errors::*;
+use crate::locale::Locale;
 
 pub const WIDGET_ROUTES: routes::Widget = routes::Widget::new();
 
@@ -28,13 +29,18 @@ pub mod routes {
 
 #[derive(TemplateOnce, Clone)]
 #[template(path = "widget/index.html")]
-pub struct IndexPage;
+pub struct IndexPage {
+    /// Übersetzte Texte des Widgets
+    t: Locale,
+}
 
 const PAGE: &str = "mCaptcha CAPTCHA verification";
 
 impl IndexPage {
     fn new() -> Self {
-        IndexPage {}
+        IndexPage {
+            t: Locale::from_env(),
+        }
     }
 }
 
